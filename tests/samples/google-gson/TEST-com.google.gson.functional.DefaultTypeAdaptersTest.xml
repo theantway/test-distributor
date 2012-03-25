@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="0.316" errors="0" skipped="0" tests="65" name="com.google.gson.functional.DefaultTypeAdaptersTest">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="21.0-b17"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/wxu/projects/google-gson/gson"/>
+    <property name="java.runtime.version" value="1.7.0_147-icedtea-b147"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="basedir" value="/home/wxu/projects/google-gson/gson"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="surefire.real.class.path" value="/tmp/surefirebooter357657007972989187.jar"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="surefire.test.class.path" value="/home/wxu/projects/google-gson/gson/target/test-classes:/home/wxu/projects/google-gson/gson/target/classes:/home/wxu/.m2/repository/junit/junit/3.8.2/junit-3.8.2.jar:"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="3.0.0-12-generic"/>
+    <property name="user.home" value="/home/wxu"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="1.7"/>
+    <property name="user.name" value="wxu"/>
+    <property name="java.class.path" value="/home/wxu/projects/google-gson/gson/target/test-classes:/home/wxu/projects/google-gson/gson/target/classes:/home/wxu/.m2/repository/junit/junit/3.8.2/junit-3.8.2.jar:"/>
+    <property name="java.vm.specification.version" value="1.7"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-7-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="/tmp/surefirebooter357657007972989187.jar /tmp/surefire2839334037527890413tmp /tmp/surefire7319309893760774847tmp"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.7.0_147-icedtea"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/netx.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/plugin.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rhino.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="localRepository" value="/home/wxu/.m2/repository"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase time="0.158" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testSetSerialization"/>
+  <testcase time="0.004" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testClassSerialization"/>
+  <testcase time="0.004" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testClassDeserialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testUrlSerialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testUrlDeserialization"/>
+  <testcase time="0.004" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testUrlNullSerialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testUrlNullDeserialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testUriSerialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testUriDeserialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testUuidSerialization"/>
+  <testcase time="0.001" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testUuidDeserialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testLocaleSerializationWithLanguage"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testLocaleDeserializationWithLanguage"/>
+  <testcase time="0.001" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testLocaleSerializationWithLanguageCountry"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testLocaleDeserializationWithLanguageCountry"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testLocaleSerializationWithLanguageCountryVariant"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testLocaleDeserializationWithLanguageCountryVariant"/>
+  <testcase time="0.007" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testBigDecimalFieldSerialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testBigDecimalFieldDeserialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testBadValueForBigDecimalDeserialization"/>
+  <testcase time="0.001" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testBigIntegerFieldSerialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testBigIntegerFieldDeserialization"/>
+  <testcase time="0.001" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testOverrideBigIntegerTypeAdapter"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testBitSetSerialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testOverrideBigDecimalTypeAdapter"/>
+  <testcase time="0.001" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testBitSetDeserialization"/>
+  <testcase time="0.004" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testDefaultDateSerialization"/>
+  <testcase time="0.001" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testDefaultDateDeserialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testDefaultJavaSqlDateSerialization"/>
+  <testcase time="0.001" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testDefaultJavaSqlDateDeserialization"/>
+  <testcase time="0.001" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testDefaultJavaSqlTimestampSerialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testDefaultJavaSqlTimestampDeserialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testDefaultJavaSqlTimeSerialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testDefaultJavaSqlTimeDeserialization"/>
+  <testcase time="0.001" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testDefaultDateSerializationUsingBuilder"/>
+  <testcase time="0.002" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testDefaultDateDeserializationUsingBuilder"/>
+  <testcase time="0.001" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testDefaultCalendarSerialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testDefaultCalendarDeserialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testDefaultGregorianCalendarSerialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testDefaultGregorianCalendarDeserialization"/>
+  <testcase time="0.003" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testDateSerializationWithPattern"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testDateDeserializationWithPattern"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testDateSerializationWithPatternNotOverridenByTypeAdapter"/>
+  <testcase time="0.002" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testDateSerializationInCollection"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testTimestampSerialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testSqlDateSerialization"/>
+  <testcase time="0.001" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testJsonPrimitiveSerialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testJsonPrimitiveDeserialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testJsonNullSerialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testNullJsonElementSerialization"/>
+  <testcase time="0.001" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testJsonArraySerialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testJsonArrayDeerialization"/>
+  <testcase time="0.003" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testJsonObjectDeerialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testJsonNullDeerialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testNullJsonElementDeserialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testPropertiesSerialization"/>
+  <testcase time="0.001" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testTreeSetSerialization"/>
+  <testcase time="0.002" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testNullSerialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testJsonObjectSerialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testPropertiesDeserialization"/>
+  <testcase time="0.001" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testTreeSetDeserialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testStringBuilderSerialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testStringBuilderDeserialization"/>
+  <testcase time="0.001" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testStringBufferSerialization"/>
+  <testcase time="0" classname="com.google.gson.functional.DefaultTypeAdaptersTest" name="testStringBufferDeserialization"/>
+</testsuite>

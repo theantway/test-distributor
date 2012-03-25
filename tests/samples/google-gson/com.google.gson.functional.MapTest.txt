@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.google.gson.functional.MapTest
+-------------------------------------------------------------------------------
+Tests run: 40, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.042 sec <<< FAILURE!
+testParameterizedMapSubclassDeserialization(com.google.gson.functional.MapTest)  Time elapsed: 0.003 sec  <<< ERROR!
+java.lang.ClassCastException: java.util.LinkedHashMap cannot be cast to com.google.gson.functional.MapTest$MyParameterizedMap
+	at com.google.gson.functional.MapTest.testParameterizedMapSubclassDeserialization(MapTest.java:170)
+
