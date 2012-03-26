@@ -1,0 +1,27 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+version = '1.0'
+
+dependencies {
+    compile 'junit:junit:4.10'
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Junit Tests Explorer',
+                'Implementation-Version': version,
+                'Class-Path': configurations.runtime.collect { 'libs/' + it.getName() }.join(' '),
+                'Main-Class': 'org.testdistributor.JUnitTestsExplorer'
+    }
+}
+
+task tar(type: Tar) {
+    compression = Compression.GZIP
+    extension = 'tar.gz'
+
+    from jar.outputs.files
+    into('libs') {
+        from configurations.runtime
+    }
+
+}
