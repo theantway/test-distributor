@@ -1,7 +1,7 @@
 import argparse
 import os
-from xml.etree.ElementTree import ElementTree
 import sys
+from xml.etree.ElementTree import ElementTree
 
 class JunitTestReportsParser:
     def __init__(self):
@@ -25,6 +25,7 @@ class JunitTestReportsParser:
         self.tree.parse(report_file)
         suite = self.tree.getroot()
         return suite.attrib["name"], float(suite.attrib["time"])
+
     def _on_parse_error(self, err):
         raise err
 
@@ -68,11 +69,6 @@ class TestDistributor:
 
             self.blocks_with_time.append(current_block)
 
-        for block in self.blocks_with_time:
-            print(block.name)
-            for test in block.tests:
-                print(test.name)
-
         return self.blocks_with_time
 
     def _get_tests_time(self, test_name):
@@ -107,6 +103,7 @@ def parse_args():
     parser.add_argument('-d', '--dest-folder', dest='dest_folder', nargs='?', help='destination folder for generated files', default='test-blocks')
     parser.add_argument('--default-test-duration', dest='default_test_duration', type=int, nargs='?', help='destination folder for generated files', default=1)
     parser.add_argument('--max_seconds_exceed_average', dest='max_seconds_exceed_average', type=int, nargs='?', help='max seconds exceed average test time for each block', default=10)
+    parser.add_argument('--delimiter', dest='delimiter', type=str, nargs='?', help='delimiter', default=',')
 
     return parser.parse_args()
 
@@ -124,8 +121,9 @@ if __name__ == '__main__':
     if not os.path.exists(args.dest_folder):
         os.makedirs(args.dest_folder)
 
+    delimiter = args.delimiter.decode('string_escape')
     for block in blocks:
-        print("Estimated time for {0} is: {1}".format(block.name, block.total_time))
+        print("\nEstimated time for {0} is: {1}".format(block.name, block.total_time))
         with open(os.path.join(args.dest_folder, "{0}-{1}.{2}".format(args.result_filename_prefix, block.name, args.result_filename_extension)), 'w') as f:
-            print(",".join([test.name for test in block.tests]))
-            f.write(",".join([test.name for test in block.tests]))
+            print(delimiter.join([test.name for test in block.tests]))
+            f.write(delimiter.join([test.name for test in block.tests]))
