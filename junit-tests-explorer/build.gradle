@@ -2,8 +2,22 @@ apply plugin: 'java'
 apply plugin: 'idea'
 version = '1.0'
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     compile 'junit:junit:4.10'
+    testCompile 'org.hamcrest:hamcrest-all:1.1'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+            srcDir 'src/cpsuite/java'
+        }
+    }
 }
 
 jar {
