@@ -56,12 +56,13 @@ class TestDistributor:
 
     def assign(self, total_blocks, tests):
         self._init_test_time(tests)
-        average_build_time = self._average_build_time(total_blocks, self.tests_with_time)
-        max_build_time = average_build_time + self.max_seconds_exceed_average
-        print("Estimated average test time: " + str(average_build_time))
 
         for block_idx in range(1, total_blocks + 1):
             current_block  = TestBlock(str(block_idx))
+            average_build_time = self._average_build_time(total_blocks - block_idx + 1, self.tests_with_time)
+            max_build_time = average_build_time + self.max_seconds_exceed_average
+            print("Estimated average test time: " + str(average_build_time))
+
             for test in self.tests_with_time:
                 if test.block is None:
                     if block_idx == total_blocks or len(current_block.tests) == 0 or current_block.total_time + test.time <= max_build_time:
@@ -87,7 +88,8 @@ class TestDistributor:
     def _average_build_time(self, blocks, tests_with_time):
         total_time = 0
         for test in tests_with_time:
-            total_time += test.time
+            if test.block is None:
+                total_time += test.time
 
         print("Estimated total test time: " + str(total_time))
         return total_time/blocks
