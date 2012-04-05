@@ -1,3 +1,6 @@
+'''Assign tests to n blocks for distributed tests
+Repository: https://github.com/theantway/test-distributor
+'''
 import argparse
 import os
 import sys
