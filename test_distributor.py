@@ -59,9 +59,9 @@ class TestDistributor:
 
         for block_idx in range(1, total_blocks + 1):
             current_block  = TestBlock(str(block_idx))
-            average_build_time = self._average_build_time(total_blocks - block_idx + 1, self.tests_with_time)
+            count_of_tests, total_time, average_build_time = self._average_build_time(total_blocks - block_idx + 1, self.tests_with_time)
             max_build_time = average_build_time + self.max_seconds_exceed_average
-            print("Estimated average test time: " + str(average_build_time))
+            print("Estimated total test time {0} seconds, average test time {1} for all {1} tests.".format(str(total_time), str(average_build_time), str(count_of_tests)))
 
             for test in self.tests_with_time:
                 if test.block is None:
@@ -87,12 +87,13 @@ class TestDistributor:
 
     def _average_build_time(self, blocks, tests_with_time):
         total_time = 0
+        count_of_tests = 0
         for test in tests_with_time:
             if test.block is None:
                 total_time += test.time
+                count_of_tests +=1
 
-        print("Estimated total test time: " + str(total_time))
-        return total_time/blocks
+        return count_of_tests, total_time, total_time/blocks
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Assign tests to n blocks for distributed tests.',
@@ -104,7 +105,7 @@ def parse_args():
     parser.add_argument('-e', '--name-extension', dest='result_filename_extension', nargs='?', help='file extension for the result files', default='txt')
     parser.add_argument('-d', '--dest-folder', dest='dest_folder', nargs='?', help='destination folder for generated files', default='test-blocks')
     parser.add_argument('--default-test-duration', dest='default_test_duration', type=int, nargs='?', help='destination folder for generated files', default=1)
-    parser.add_argument('--max_seconds_exceed_average', dest='max_seconds_exceed_average', type=int, nargs='?', help='max seconds exceed average test time for each block', default=10)
+    parser.add_argument('--max-seconds-exceed-average', dest='max_seconds_exceed_average', type=int, nargs='?', help='max seconds exceed average test time for each block', default=10)
     parser.add_argument('--delimiter', dest='delimiter', type=str, nargs='?', help='delimiter', default=',')
 
     return parser.parse_args()
@@ -113,7 +114,11 @@ if __name__ == '__main__':
     args = parse_args()
 
     parser = JunitTestReportsParser()
-    parser.parse_history_results(args.tests_history_report_folder)
+
+    if not os.path.exists(args.tests_history_report_folder):
+        print("INFO: History report folder doesn't exists, assigning tests by numbers")
+    else:
+        parser.parse_history_results(args.tests_history_report_folder)
 
     tests_to_assign = sys.stdin.readlines()
 
