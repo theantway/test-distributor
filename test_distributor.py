@@ -36,15 +36,19 @@ class Test:
         self.block = None
 
 class TestBlock:
-    def __init__(self, name):
+    def __init__(self, name, average_build_time, max_build_time, is_last_block=False):
         self.name = name
         self.tests = list()
         self.total_time = 0
+        self._is_last_block = is_last_block
+        self._average_build_time = average_build_time
+        self._max_build_time = max_build_time
 
     def add_test(self, test):
-        self.total_time += test.time
-        self.tests.append(test)
-        test.block = self
+        if self._is_last_block or len(self.tests) == 0 or (self.total_time < self._average_build_time and self.total_time + test.time <= self._max_build_time):
+            self.total_time += test.time
+            self.tests.append(test)
+            test.block = self
 
 class TestDistributor:
     def __init__(self, history_test_time, default_test_duration=1, max_seconds_exceed_average=10):
@@ -58,15 +62,14 @@ class TestDistributor:
         self._init_test_time(tests)
 
         for block_idx in range(1, total_blocks + 1):
-            current_block  = TestBlock(str(block_idx))
             count_of_tests, total_time, average_build_time = self._average_build_time(total_blocks - block_idx + 1, self.tests_with_time)
             max_build_time = average_build_time + self.max_seconds_exceed_average
             print("Estimated total test time {0} seconds, average test time {1} for all {1} tests.".format(str(total_time), str(average_build_time), str(count_of_tests)))
+            current_block  = TestBlock(str(block_idx), average_build_time, max_build_time, block_idx == total_blocks)
 
             for test in self.tests_with_time:
                 if test.block is None:
-                    if block_idx == total_blocks or len(current_block.tests) == 0 or current_block.total_time + test.time <= max_build_time:
-                        current_block.add_test(test)
+                    current_block.add_test(test)
 
             self.blocks_with_time.append(current_block)
 
