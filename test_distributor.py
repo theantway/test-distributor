@@ -45,7 +45,7 @@ class TestBlock:
         self._max_build_time = max_build_time
 
     def add_test(self, test):
-        if self._is_last_block or len(self.tests) == 0 or (self.total_time < self._average_build_time and self.total_time + test.time <= self._max_build_time):
+        if self._is_last_block or len(self.tests) == 0 or self.total_time + test.time <= self._average_build_time:
             self.total_time += test.time
             self.tests.append(test)
             test.block = self
