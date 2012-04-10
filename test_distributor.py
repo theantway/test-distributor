@@ -122,5 +122,5 @@ if __name__ == '__main__':
     for block in blocks:
         print("\nEstimated time for block {0} is: {1}".format(block.name, block.total_time))
         with open(os.path.join(args.dest_folder, "{0}-{1}.{2}".format(args.result_filename_prefix, block.name, args.result_filename_extension)), 'w') as f:
-            print(delimiter.join([test.name for test in block.tests]))
+            print(delimiter.join(["{0} ({1}s)".format(test.name, test.time) for test in block.tests]))
             f.write(delimiter.join([test.name for test in block.tests]))
